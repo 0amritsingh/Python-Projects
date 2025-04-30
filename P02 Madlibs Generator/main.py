@@ -1,4 +1,4 @@
-with open('Python-Projects\\story.txt', 'r') as file:
+with open('Python-Projects\\P02 Madlibs Generator\\story.txt', 'r') as file:
     story = file.readlines()
 
 new_story = []
@@ -10,6 +10,6 @@ for line in story:
             words.remove(word)
             words.insert(index, user_input)
     new_story.append(' '.join(words) + '\n')
-with open('Python-Projects\\new_story.txt', 'w') as file:
+with open('Python-Projects\\P02 Madlibs Generator\\new_story.txt', 'w') as file:
     file.writelines(new_story)
         

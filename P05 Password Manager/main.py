@@ -29,20 +29,20 @@ def pwd_management():
     while True:
         user_input = input('Enter your choice: [A]DD a password [V]IEW password list [Q]UIT\n> ')
         if user_input in 'aA':
-            with open('Python-Projects\\password_manager.txt', 'a') as file:
+            with open('Python-Projects\\P05 Password Manager\\password_manager.txt', 'a') as file:
                 username = input('Enter username: ')
                 password = input('Enter password: ')
                 file.writelines([username, '|', encrypt(password),'\n'])
                 print('* added successfully *')
         elif user_input in 'vV':
             if mstr_pwd == 'amrit':
-                with open('Python-Projects\\password_manager.txt', 'r') as file:
+                with open('Python-Projects\\P05 Password Manager\\password_manager.txt', 'r') as file:
                     content = file.readlines()
                     for i in content:
                         dpwd = i[i.find('|') + 1:-1]
                         print(f'Username: {i[:i.find('|')]}\nPassword: {decrypt(dpwd)}\n')
             else:
-                with open('Python-Projects\\password_manager.txt', 'r') as file:
+                with open('Python-Projects\\P05 Password Manager\\password_manager.txt', 'r') as file:
                     content = file.readlines()
                     for i in content:
                         print(f'Username: {i[:i.find('|')]}\nPassword: {i[i.find('|') + 1:-1]}\n')
